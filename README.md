@@ -48,7 +48,7 @@ Before you begin, you'll need to make sure you have the following installed:
 - MongoDB
 
 ### Installation
-To install the app, follow these steps:
+To try out this website:
 
 - run `npm install` to install all dependencies
 - run `node seeds/index.js` to seed the initial places
