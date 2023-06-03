@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+  <h1 class="text-center">New Attraction</h1>
+  <div class="col-6 offset-3">
+    <form action="/japango" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label class="form-label" for="name">Attraction</label>
+        <input class="form-control" type="name" id="name" name="attraction[name]" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="location">Location</label>
+        <input class="form-control" type="text" id="location" name="attraction[location]" required />
+      </div>
+      <div>
+        <label class="form-label" for="price">Ticket Price</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">¥</span>
+          <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="0" aria-describedby="basic-addon1" name="attraction[price]" required />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="description">Description</label>
+        <textarea class="form-control" type="text" id="description" name="attraction[description]" required></textarea>
+      </div>
+      <div class="mt-3 mb-3 custom-file">
+        <label for="image" class="form-label">Choose images</label>
+        <input class="form-control" type="file" id="image" name="image" multiple />
+        <label for="image" class="custom-file-label text-muted"></label>
+      </div>
+      <div class="mb-3"><button class="btn btn-success">Add New</button></div>
+    </form>
+  </div>
+</div>

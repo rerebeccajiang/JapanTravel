@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') %>
+<div id="cluster-map"></div>
+<h1 class="my-4">
+  Explore all attractions
+  <form action="/japango" method="GET" class="form-inline my-4">
+    <div class="form-group">
+      <input type="text" name="search" placeholder="Where to..." class="form-control" />
+      <input type="submit" value="Search" class="bth bth-default" hidden />
+    </div>
+  </form>
+</h1>
+
+<ul>
+  <% if(noMatch !== null) { %>
+  <h3><%= noMatch %></h3>
+  <% } else{%> <% for (let place of places){%>
+  <div class="card" mb-3>
+    <div class="row">
+      <div class="col-md-4">
+        <% if(place.images.length) {%>
+        <img class="img-fluid" src="<%=place.images[0].url%>" alt="" />
+        <% }else{ %>
+        <img class="img-fluid" src="https://res.cloudinary.com/dvluzn1gq/image/upload/v1685117591/Japango/sorasak-_UIN-pFfJ7c-unsplash_uftdgl.jpgp" alt="" />
+        <% } %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%=place.name%></h5>
+          <p class="class-text"><%=place.description.substring(0,200)%> <strong>...</strong></p>
+          <p class="text-muted"><%=place.location%></p>
+          <a href="/japango/<%=place._id%>" class="btn btn-primary">View More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%} %> <% } %>
+</ul>
+
+<script>
+  const mapToken = "<%-process.env.MAPBOX_TOKEN%>";
+  const places = {features:<%-JSON.stringify(places)%>};
+</script>
+<script src="/javascripts/clusterMap.js"></script>
