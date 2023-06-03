@@ -8,8 +8,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/japan-travel')
     .then(() => console.log("connection open!"))
     .catch(error => handleError(error));
 
-const sample = array => array[Math.floor(Math.random() * array.length)]
-
 
 const seedDB = async () => {
     await Japanplace.deleteMany({});
@@ -120,34 +118,6 @@ const seedDB = async () => {
         ]
     })
     await place5.save();
-
-
-    // for (let i = 0; i < 50; i++) {
-    //     const random800 = Math.floor(Math.random() * 800);
-    //     const price = Math.floor(Math.random() * 20) + 20;
-    //     const place = new Japanplace({
-    //         author: '64224136d9db5f190be2ae60',
-    //         location: `${cities[random800].name}`,
-    //         name: sample(attractions),
-    //         description: 'awesome place',
-    //         price: price,
-    //         geometry: {
-    //             type: "Point",
-    //             coordinates: [-133, 47]
-    //         },
-    //         images: [
-    //             {
-    //                 url: 'https://res.cloudinary.com/dvluzn1gq/image/upload/v1684857908/Japango/vouxawvbmyp7wqgr5hns.jpg',
-    //                 filename: 'Japango/vouxawvbmyp7wqgr5hns'
-    //             },
-    //             {
-    //                 url: 'https://res.cloudinary.com/dvluzn1gq/image/upload/v1684857908/Japango/pxmsq2uajxam27u3loqv.jpg',
-    //                 filename: 'Japango/pxmsq2uajxam27u3loqv'
-    //             }
-    //         ]
-    //     })
-    //     await place.save();
-    // }
 }
 
 seedDB().then(() => {
