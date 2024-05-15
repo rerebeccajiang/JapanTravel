@@ -7,8 +7,8 @@ Japango is a dedicated platform designed to empower travelers and enthusiasts wi
 - [Japango Features](#Japango-Features)
   - [Register/Login](#Register/Login)
   - [Browse all Places](#Browse-all-Places)
-  - [Add/Edit your review](#Add/Edit-your-review)
-  - [Add/Edit your place](#Add/Edit-your-place)
+  - [Add/Edit your review](#AddEdit-your-review)
+  - [Add/Edit your place](#AddEdit-your-place)
 - [Getting Started](#getting-started)
 
 ## JapanGo Features
