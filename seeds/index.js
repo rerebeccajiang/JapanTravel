@@ -8,8 +8,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/japan-travel')
     .then(() => console.log("connection open!"))
     .catch(error => handleError(error));
 
-const sample = array => array[Math.floor(Math.random() * array.length)]
-
 
 const seedDB = async () => {
     await Japanplace.deleteMany({});
