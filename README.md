@@ -47,6 +47,20 @@ Before you begin, you'll need to make sure you have the following installed:
 - Nodejs
 - MongoDB
 
+You also need to signup for a new free mapbox and cloudinary account at the following link:
+
+- Mapbox: https://www.mapbox.com/
+- Cloudinary: https://cloudinary.com/
+
+Then, create a .env file at the same directory level as where app.js is, to store the environment variables from mapbox and cloudinary.
+In order to do this, simply fill in the following template and paste into .env created by you.
+
+- CLOUNDINARY_CLOUD_NAME=
+- CLOUNDINARY_KEY=
+- CLOUNDINARY_SECRET=
+- MAPBOX_TOKEN=
+
+
 ### Installation
 To try out this website:
 
